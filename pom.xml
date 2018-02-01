@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>top.wisely</groupId>
+	<artifactId>spring-spark-cassandra</artifactId>
+	<version>12</version>
+	<packaging>jar</packaging>
+
+	<name>spring-spark-cassandra</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<skipTests>true</skipTests>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.10</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.10</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-mapping</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>io.fabric8</groupId>-->
+				<!--<artifactId>fabric8-maven-plugin</artifactId>-->
+				<!--<version>3.5.33</version>-->
+				<!--<configuration>-->
+
+					<!--<registry>192.168.1.140:5000</registry>-->
+					<!--<dockerHost>tcp://192.168.1.140:2375</dockerHost>-->
+					<!--<images>-->
+						<!--<image>-->
+							<!--<name>192.168.1.140:5000/feitian/${project.name}:${project.version}</name>-->
+							<!--<build>-->
+								<!--<from>java:8</from>-->
+								<!--<maintainer>wisely-man@126.com</maintainer>-->
+								<!--<assembly>-->
+									<!--<descriptorRef>artifact</descriptorRef>-->
+								<!--</assembly>-->
+
+								<!--<runCmds>-->
+									<!--<run>echo "Asia/Shanghai" > /etc/timezone</run>-->
+								<!--</runCmds>-->
+								<!--<cmd>-->
+									<!--<shell>java -Djava.security.egd=file:/dev/./urandom -jar /maven/${project.name}-${project.version}.jar</shell>-->
+								<!--</cmd>-->
+							<!--</build>-->
+						<!--</image>-->
+					<!--</images>-->
+				<!--</configuration>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<goals>-->
+							<!--&lt;!&ndash;<goal>resource</goal>&ndash;&gt;-->
+							<!--<goal>build</goal>-->
+							<!--<goal>push</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+		</plugins>
+	</build>
+
+
+</project>

@@ -1,0 +1,14 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: spring-spark-cassandra-demo
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: spring-spark-cassandra-demo
+            image: 192.168.1.140:5000/feitian/spring-spark-cassandra:12
+          restartPolicy: OnFailure
