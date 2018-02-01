@@ -79,6 +79,8 @@ spark.master: spark://master:7077
 cassandra.host: 192.168.1.140
 cassandra.keyspace: hfcb
 ```
+
+此处特别说明`spark://master:7077`是域名形式而不是ip地址，可修改本地`hosts`文件将`master`与`ip`地址映射。
     
 
 - 配置`SparkContext`和`CassandraSQLContext`
